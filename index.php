@@ -1,13 +1,5 @@
 <?php
-/**
- * @version        $Id: index.php 1 9:23 2010-11-11 $
- * @package        DedeCMS.Site
- * @founder        IT柏拉图, https://weibo.com/itprato
- * @author         DedeCMS团队
- * @copyright      Copyright (c) 2004 - 2024, 上海卓卓网络科技有限公司 (DesDev, Inc.)
- * @license        http://help.dedecms.com/usersguide/license.html
- * @link           http://www.dedecms.com
- */
+
 if(!file_exists(dirname(__FILE__).'/data/common.inc.php'))
 {
     header('Location:install/index.php');
