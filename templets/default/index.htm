@@ -166,11 +166,23 @@
 	<a href="#"></a>
 	</div>
    <div class="main_image">
-  <ul>
-      {dede:arclist typeid='1' row='1' type='image.'}
-		<li style="background:url('[field:litpic function="GetOneImgUrl(@me,1)"/]') center top no-repeat"><a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank"><span class="main_image_c"></span></a></li>
-      {/dede:arclist}
-  </ul>
+       <ul>
+           {dede:arclist typeid='1' row='1' type='image.' addfields='litpic' channelid='8'}
+           {dede:field.litpic runphp='yes'}
+           $litpic = @me;
+           if(empty($litpic) || $litpic == '/images/defaultpic.gif'){
+           @me = 'https://你的备用图片地址.jpg';
+           }else{
+           @me = GetOneImgUrl($litpic,1);
+           }
+           {/dede:field.litpic}
+           <li style="background:url('[field:litpic/]') center top no-repeat; background-size: cover;">
+               <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
+                   <span class="main_image_c"></span>
+               </a>
+           </li>
+           {/dede:arclist}
+       </ul>
   <a href="javascript:;" id="btn_prev"></a> <a href="javascript:;" id="btn_next"></a> </div>
   </div>
 </div>
