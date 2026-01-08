@@ -167,19 +167,18 @@
 	</div>
    <div class="main_image">
        <ul>
-           {dede:arclist typeid='1' row='1' type='image.' addfields='litpic' channelid='8'}
-           {dede:field.litpic runphp='yes'}
-           $litpic = @me;
-           if(empty($litpic) || $litpic == '/images/defaultpic.gif'){
-           @me = 'https://你的备用图片地址.jpg';
-           }else{
-           @me = GetOneImgUrl($litpic,1);
-           }
-           {/dede:field.litpic}
-           <li style="background:url('[field:litpic/]') center top no-repeat; background-size: cover;">
-               <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
-                   <span class="main_image_c"></span>
-               </a>
+           {dede:arclist typeid='1' row='1' type='image.' channelid='8'}
+           {# 调试代码：输出所有关键字段，看真实值 #}
+           <div style="display:none;">
+               栏目ID：[field:typeid/]<br>
+               图片地址：[field:litpic/]<br>
+               处理后地址：[field:litpic function="GetOneImgUrl(@me,1)"/]<br>
+               图片数量：[field:imgnum/]
+           </div>
+           <li style="width:100%; height:300px; background:url('[field:litpic function="GetOneImgUrl(@me,1)"/]') center top no-repeat; background-size:cover;">
+           <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
+               <span class="main_image_c"></span>
+           </a>
            </li>
            {/dede:arclist}
        </ul>
