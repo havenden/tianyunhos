@@ -175,8 +175,13 @@
            type='image.'       <!-- 筛选图集 -->
            cache='0'           <!-- 关闭缓存，首页必须加 -->
            }
-           <!-- 只输出文字，看是否显示 -->
-           <li>测试数据：[field:litpic/]</li>
+           <li style="width:100%; height:300px; background:url('[field:litpic function="GetOneImgUrl(@me,1)"/]') center top no-repeat; background-size:cover;">
+           <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
+               <span class="main_image_c"></span>
+           </a>
+           </li>
+<!--           <li>测试数据：[field:litpic/]</li>-->
+<!--           <li>测试数据：[field:litpic function="GetOneImgUrl(@me,1)"/]</li>-->
            {/dede:arclist}
        </ul>
   <a href="javascript:;" id="btn_prev"></a> <a href="javascript:;" id="btn_next"></a> </div>
