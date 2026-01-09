@@ -167,21 +167,39 @@
 	</div>
    <div class="main_image">
        <ul>
-           <!-- 极简调试：只看是否能查到数据，去掉所有样式/逻辑 -->
-           {dede:arclist
-           typeid='1'          <!-- 务必替换成你真实的图集栏目ID -->
-           row='10'            <!-- 临时调大条数，确保能查到 -->
-           channelid='8'       <!-- 图集模型固定ID，不能改 -->
-           type='image.'       <!-- 筛选图集 -->
-           cache='0'           <!-- 关闭缓存，首页必须加 -->
-           }
-           <!-- 只输出文字，看是否显示 -->
-           <li>测试数据：[field:title/]</li>
-           {/dede:arclist}
+           {dede:sql sql="SELECT litpic,title FROM dede_archives WHERE typeid=1 AND channel=8 AND arcrank=0 LIMIT 1"}
+           {dede:field.litpic runphp='yes'}
+           // 1. 定义你的默认兜底图（必须替换成自己的图片地址！）
+           $default_img = 'https://你的网站域名/uploads/default.jpg';
+           $litpic = trim(@me);
 
-           <!-- 空数据提示：如果上面没显示，会出这个提示 -->
+           // 2. 处理无效图片地址
+           if(empty($litpic) || $litpic == '/images/defaultpic.gif' || strpos($litpic, 'defaultpic')!==false){
+           @me = $default_img; // 无有效图片时用默认图
+           }else{
+           // 3. 调用织梦函数处理图片路径
+           $litpic = GetOneImgUrl($litpic, 1);
+           // 4. 补全域名（首页最容易出的问题：相对路径→绝对路径）
+           if(strpos($litpic, 'http') === false){
+           @me = 'https://你的网站域名' . $litpic; // 替换成你的真实域名！
+           }else{
+           @me = $litpic;
+           }
+           }
+           {/dede:field.litpic}
+           <!-- 必加宽高+背景图适配样式 -->
+           <li style="width:100%; height:300px; background:url('[field:litpic/]') center top no-repeat; background-size:cover;">
+               <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
+                   <span class="main_image_c"></span>
+               </a>
+           </li>
+           {/dede:sql}
            {dede:empty/}
-           <li>★ 没有查到任何图集数据！★</li>
+           <li style="width:100%; height:300px; background:url('https://你的网站域名/uploads/default.jpg') center top no-repeat; background-size:cover;">
+               <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
+                   <span class="main_image_c"></span>
+               </a>
+           </li>
            {/dede:empty}
        </ul>
   <a href="javascript:;" id="btn_prev"></a> <a href="javascript:;" id="btn_next"></a> </div>
