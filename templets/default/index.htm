@@ -167,21 +167,17 @@
 	</div>
    <div class="main_image">
        <ul>
-           {dede:sql sql="SELECT litpic,title FROM archives WHERE typeid=1 AND channel=2 AND arcrank=0 LIMIT 5"}
-           <li style="width:100%; height:300px; background:url('[field:litpic function="GetOneImgUrl(@me,1)"/]') center top no-repeat; background-size:cover;">
-           <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
-               <span class="main_image_c"></span>
-           </a>
-           [field:litpic function="GetOneImgUrl(@me,1)"/]
-           </li>
-           {/dede:sql}
-           {dede:empty/}
-           <li style="width:100%; height:300px; background:url('https://你的默认图地址.jpg') center top no-repeat; background-size:cover;">
-               <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
-                   <span class="main_image_c"></span>
-               </a>
-           </li>
-           {/dede:empty}
+           <!-- 极简调试：只看是否能查到数据，去掉所有样式/逻辑 -->
+           {dede:arclist
+           typeid='1'          <!-- 务必替换成你真实的图集栏目ID -->
+           row='5'            <!-- 临时调大条数，确保能查到 -->
+           channelid='2'       <!-- 图集模型固定ID，不能改 -->
+           type='image.'       <!-- 筛选图集 -->
+           cache='0'           <!-- 关闭缓存，首页必须加 -->
+           }
+           <!-- 只输出文字，看是否显示 -->
+           <li>测试数据：[field:litpic/]</li>
+           {/dede:arclist}
        </ul>
   <a href="javascript:;" id="btn_prev"></a> <a href="javascript:;" id="btn_next"></a> </div>
   </div>
