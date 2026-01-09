@@ -167,36 +167,16 @@
 	</div>
    <div class="main_image">
        <ul>
-           {dede:sql sql="SELECT litpic,title FROM archives WHERE typeid=1 AND channel=8 AND arcrank=0 LIMIT 1"}
-           {dede:field.litpic runphp='yes'}
-           // 替换为你自己的默认图片地址（必须是完整URL）
-           $default_img = 'https://你的网站域名/uploads/default.jpg';
-           $litpic = trim(@me);
-
-           // 处理无效/默认占位图
-           if(empty($litpic) || $litpic == '/images/defaultpic.gif' || strpos($litpic, 'defaultpic')!==false){
-           @me = $default_img;
-           }else{
-           // 调用织梦内置函数处理图片路径
-           $litpic = GetOneImgUrl($litpic, 1);
-           // 补全域名（首页必须转绝对路径）
-           if(strpos($litpic, 'http') === false){
-           @me = 'https://你的网站域名' . $litpic; // 替换为真实域名，不要加最后的/
-           }else{
-           @me = $litpic;
-           }
-           }
-           {/dede:field.litpic}
-           <!-- 确保li有明确宽高，背景图才能显示  [field:litpic/]-->
-           <li style="width:100%; height:300px; ">
-               <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
-                   <span class="main_image_c">[field:litpic/]</span>
-               </a>
+           {dede:sql sql="SELECT litpic,title FROM archives WHERE typeid=1 AND channel=8 AND arcrank=0 LIMIT 5"}
+           <li style="width:100%; height:300px; background:url('[field:litpic function="GetOneImgUrl(@me,1)"/]') center top no-repeat; background-size:cover;">
+           <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
+               <span class="main_image_c"></span>
+           </a>
+           [field:litpic function="GetOneImgUrl(@me,1)"/]
            </li>
            {/dede:sql}
-           <!-- 兜底：查询失败时显示默认li -->
            {dede:empty/}
-           <li style="width:100%; height:300px; background:url('https://你的网站域名/uploads/default.jpg') center top no-repeat; background-size:cover;">
+           <li style="width:100%; height:300px; background:url('https://你的默认图地址.jpg') center top no-repeat; background-size:cover;">
                <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
                    <span class="main_image_c"></span>
                </a>
