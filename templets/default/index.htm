@@ -166,27 +166,24 @@
 	<a href="#"></a>
 	</div>
    <div class="main_image">
-       {dede:arclist typeid='1' row='1' type='image.' channelid='8' cache='0'}
-       <!-- 调试信息：临时显示，测试完删除 -->
-       <div style="color:red;">
-           查到数据了吗？→ 是<br>
-           原始图片地址：[field:litpic/]<br>
-           处理后地址：[field:litpic function="GetOneImgUrl(@me,1)"/]
-       </div>
-       <li style="width:100%; height:300px; background:url('[field:litpic function="GetOneImgUrl(@me,1)"/]') center top no-repeat; background-size:cover;">
-       <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
-           <span class="main_image_c"></span>
-       </a>
-       </li>
-       {/dede:arclist}
-       {dede:empty/}
-       <div style="color:red;">没查到任何图集数据！</div>
-       <li style="width:100%; height:300px; background:url('https://你的域名/uploads/default.jpg') center top no-repeat; background-size:cover;">
-           <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
-               <span class="main_image_c"></span>
-           </a>
-       </li>
-       {/dede:empty}
+       <ul>
+           <!-- 极简调试：只看是否能查到数据，去掉所有样式/逻辑 -->
+           {dede:arclist
+           typeid='1'          <!-- 务必替换成你真实的图集栏目ID -->
+           row='10'            <!-- 临时调大条数，确保能查到 -->
+           channelid='8'       <!-- 图集模型固定ID，不能改 -->
+           type='image.'       <!-- 筛选图集 -->
+           cache='0'           <!-- 关闭缓存，首页必须加 -->
+           }
+           <!-- 只输出文字，看是否显示 -->
+           <li>测试数据：[field:title/]</li>
+           {/dede:arclist}
+
+           <!-- 空数据提示：如果上面没显示，会出这个提示 -->
+           {dede:empty/}
+           <li>★ 没有查到任何图集数据！★</li>
+           {/dede:empty}
+       </ul>
   <a href="javascript:;" id="btn_prev"></a> <a href="javascript:;" id="btn_next"></a> </div>
   </div>
 </div>
