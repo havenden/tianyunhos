@@ -42,15 +42,15 @@
             <div style="overflow: hidden;">
                 {dede:channelartlist typeid='10,12,11,16,17,34,14,13' topid='3' row='8'}
                 <div class="
-                {dede:if value='[field:global.itemindex/]==1'}sy_con1_c1{/dede:if}
-                {dede:if value='[field:global.itemindex/]==2'}sy_con1_c2{/dede:if}
-                {dede:if value='[field:global.itemindex/]==3'}sy_con1_c4{/dede:if}
-                {dede:if value='[field:global.itemindex/]==4'}sy_con1_c5{/dede:if}
-                {dede:if value='[field:global.itemindex/]==5'}sy_con1_c5_2{/dede:if}
-                {dede:if value='[field:global.itemindex/]==6'}sy_con1_c6{/dede:if}
-                {dede:if value='[field:global.itemindex/]==7'}sy_con1_c7{/dede:if}
-                {dede:if value='[field:global.itemindex/]==8'}sy_con1_c8{/dede:if}
-                ">
+                            {dede:if value='[field:autoindex/]==1'}sy_con1_c1{/dede:if}
+                            {dede:if value='[field:autoindex/]==2'}sy_con1_c2{/dede:if}
+                            {dede:if value='[field:autoindex/]==3'}sy_con1_c4{/dede:if}
+                            {dede:if value='[field:autoindex/]==4'}sy_con1_c5{/dede:if}
+                            {dede:if value='[field:autoindex/]==5'}sy_con1_c5_2{/dede:if}
+                            {dede:if value='[field:autoindex/]==6'}sy_con1_c6{/dede:if}
+                            {dede:if value='[field:autoindex/]==7'}sy_con1_c7{/dede:if}
+                            {dede:if value='[field:autoindex/]==8'}sy_con1_c8{/dede:if}
+                            ">
                     <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">
                         <h1>{dede:field name='typeenglishname'/}</h1>
                         <span>{dede:field name='typename'/}</span>
@@ -59,7 +59,8 @@
                 </div>
                 {/dede:channelartlist}
 
-		<div class="sy_con1_c9"><a href="/" title="中医科"><h1>Traditional Chinese Medicine Department</h1><span>中医科</span></a></div>
+
+                <div class="sy_con1_c9"><a href="/" title="中医科"><h1>Traditional Chinese Medicine Department</h1><span>中医科</span></a></div>
 		<div class="sy_con1_c10"><a href="/" title="营养科"><h1>Nutriology Department</h1><span>营养科</span></a></div>
 		<div class="sy_con1_c11"><a href="/" title="心理咨询"><h1>Psychological Counseling Section</h1><span>心理咨询</span></a></div>
       </div>
