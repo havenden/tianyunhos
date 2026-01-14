@@ -66,6 +66,7 @@ function lib_channelartlist(&$ctag,&$refObj)
 
     //获得类别ID总数的信息
     $typeids = array();
+    $orderSql = "";
     if($typeid==0 || $typeid=='top') {
         $tpsql = " reid=0 AND ispart<>2 AND ishidden<>1 AND channeltype>0 ";
     }
@@ -73,9 +74,12 @@ function lib_channelartlist(&$ctag,&$refObj)
     {
         if(!preg_match('#,#', $typeid)) {
             $tpsql = " reid='$typeid' AND ispart<>2 AND ishidden<>1 ";
+            $orderSql = "ORDER BY sortrank ASC";
         }
         else {
             $tpsql = " id IN($typeid) AND ispart<>2 AND ishidden<>1 ";
+            // 按 typeid 顺序排序
+            $orderSql = "ORDER BY FIELD(id," . implode(',', $typeidArr) . ") ASC";
         }
     }
 
@@ -84,7 +88,7 @@ function lib_channelartlist(&$ctag,&$refObj)
     }
 
     $dsql->SetQuery("SELECT id,typename,typedir,isdefault,ispart,defaultname,namerule2,moresite,siteurl,sitepath 
-                                            FROM `#@__arctype` WHERE $tpsql ORDER BY sortrank ASC LIMIT $totalnum");
+                                            FROM `#@__arctype` WHERE $tpsql $orderSql LIMIT $totalnum");
     $dsql->Execute();
     while($row = $dsql->GetArray()) {
         $typeids[] = $row;
