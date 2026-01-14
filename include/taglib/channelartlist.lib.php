@@ -101,7 +101,6 @@ function lib_channelartlist(&$ctag,&$refObj)
         $pv->Fields['typeurl'] = GetOneTypeUrlA($typeids[$i]);
         // 添加序号字段
         $pv->Fields['autoindex'] = $GLOBALS['itemindex'];
-        $pv->Fields['typedes'] = isset($typeids[$i]['description']) ? $typeids[$i]['description'] : '';
         $pv->SetTemplet($innertext,'string');
         $artlist .= $pv->GetResult();
         $GLOBALS['itemparity'] = ($GLOBALS['itemparity']==1 ? 2 : 1);
