@@ -5,13 +5,11 @@
         <div class="header_r">
             <ul>
                 <li id="header_0"><a href="/" title="首页" rel="nofollow" >首页</a> </li>
-                <li id="header_r1"><a href="/yyjj/" title="医院简介" rel="nofollow">医院简介</a> </li>
-                <li id="header_r2"><a href="/jpks/" title="精品科室" rel="nofollow">科室介绍</a> </li>
-                <li id="header_r3"><a href="/yltd/" title="专家团队" rel="nofollow">专家团队</a> </li>
-                <li id="header_r4"><a href="/news/" title="新闻中心" rel="nofollow">新闻中心</a> </li>
-                <li id="header_r5"><a href="/yjy/" title="医教研" rel="nofollow">医教研</a> </li>
-                <li id="header_r6"><a href="/hlfc/" title="护理风采" rel="nofollow">护理风采</a> </li>
-                <li id="header_r7"><a href="/xxgs/" title="信息公示" rel="nofollow">信息公示</a> </li>
+                {dede:channel typeid='2,3,5,6,7,8,9' row='7' noself='yes'}
+                <li id="header_r[field:global.autoindex/]">
+                    <a href="[field:typelink/]" title="[field:typename/]" rel="nofollow">[field:typename/]</a>
+                </li>
+                {/dede:channel}
                 <li style="text-indent:0px; padding-top:0"><img src="/images/tel.png" alt="天津天孕医院" /></li>
             </ul>
         </div>

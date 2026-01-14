@@ -245,17 +245,17 @@ $cfg_soft_dir = $cfg_medias_dir.'/soft';
 $cfg_other_medias = $cfg_medias_dir.'/media';
 
 //软件摘要信息，****请不要删除本项**** 否则系统无法正确接收系统漏洞或升级信息
-$cfg_version = 'V57_UTF8_SP2_118';
+$cfg_version = 'V57_UTF8_SP2_118_1';
 $cfg_soft_lang = 'utf-8';
-$cfg_soft_public = 'base';
+$cfg_soft_public = 'base1';
 
-$cfg_softname = '织梦内容管理系统';
-$cfg_soft_enname = 'DedeCMS';
-$cfg_soft_devteam = 'DedeCMS官方团队';
+$cfg_softname = '内容管理系统';
+$cfg_soft_enname = 'TYCMS';
+$cfg_soft_devteam = '天孕';
 
 //文档的默认命名规则
 $art_shortname = $cfg_df_ext = '.html';
-$cfg_df_namerule = '{typedir}/{Y}/{M}{D}/{aid}'.$cfg_df_ext;
+$cfg_df_namerule = '{typedir}/{aid}'.$cfg_df_ext;
 
 //新建目录的权限，如果你使用别的属性，本程不保证程序能顺利在Linux或Unix系统运行
 if(isset($cfg_ftp_mkdir) && $cfg_ftp_mkdir=='Y')
