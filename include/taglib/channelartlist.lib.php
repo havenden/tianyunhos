@@ -79,6 +79,7 @@ function lib_channelartlist(&$ctag,&$refObj)
         else {
             $tpsql = " id IN($typeid) AND ispart<>2 AND ishidden<>1 ";
             // 按 typeid 顺序排序
+            $typeidArr = explode(',', $typeid);
             $orderSql = "ORDER BY FIELD(id," . implode(',', $typeidArr) . ") ASC";
         }
     }
