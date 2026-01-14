@@ -1,0 +1,29 @@
+<!--star banner-->
+<script type="text/javascript" src="/js/jquery.event.drag-1.5.min.js"></script>
+<script type="text/javascript" src="/js/jquery.touchSlider.js"></script>
+<div class="banner">
+    <div class="main_visual">
+        <div class="flicking_con">
+            <a href="#"></a> <a href="#"></a> <a href="#"></a><a href="#"></a>
+            <a href="#"></a>
+        </div>
+        <div class="main_image">
+            <ul>
+                {dede:arclist
+                typeid='1'          <!-- 务必替换成你真实的图集栏目ID -->
+                row='5'            <!-- 临时调大条数，确保能查到 -->
+                channelid='2'       <!-- 图集模型固定ID，不能改 -->
+                type='image.'       <!-- 筛选图集 -->
+                cache='0'           <!-- 关闭缓存，首页必须加 -->
+                }
+                <li style="width:100%; height:450px; background:url('[field:litpic/]') center top no-repeat; background-size:cover;">
+                    <a href="http://mlk.zoosnet.net/LR/Chatpre.aspx?id=MLK16844568&lng=cn" target="_blank">
+                        <span class="main_image_c"></span>
+                    </a>
+                </li>
+                {/dede:arclist}
+            </ul>
+            <a href="javascript:;" id="btn_prev"></a> <a href="javascript:;" id="btn_next"></a> </div>
+    </div>
+</div>
+<!--stop banner-->
