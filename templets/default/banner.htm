@@ -4,8 +4,15 @@
 <div class="banner">
     <div class="main_visual">
         <div class="flicking_con">
-            <a href="#"></a> <a href="#"></a> <a href="#"></a><a href="#"></a>
+            {dede:arclist
+            typeid='1'          <!-- 务必替换成你真实的图集栏目ID -->
+            row='5'            <!-- 临时调大条数，确保能查到 -->
+            channelid='2'       <!-- 图集模型固定ID，不能改 -->
+            type='image.'       <!-- 筛选图集 -->
+            cache='0'           <!-- 关闭缓存，首页必须加 -->
+            }
             <a href="#"></a>
+            {/dede:arclist}
         </div>
         <div class="main_image">
             <ul>
@@ -23,7 +30,8 @@
                 </li>
                 {/dede:arclist}
             </ul>
-            <a href="javascript:;" id="btn_prev"></a> <a href="javascript:;" id="btn_next"></a> </div>
+            <a href="javascript:;" id="btn_prev"></a> <a href="javascript:;" id="btn_next"></a>
+        </div>
     </div>
 </div>
 <!--stop banner-->
