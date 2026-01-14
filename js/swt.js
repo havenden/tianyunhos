@@ -153,33 +153,33 @@ document.writeln("}");
 document.writeln("</style>");
 
 
-document.writeln("<div id=\'xf\'>");
-document.writeln("	<div class=\'xf1\'>");
-document.writeln("		<dl>");
-document.writeln("			<dd><a href=\'/angel/xfjs/\'><img src=\'/images/left1.png\' alt=\'\'>行风建设</a></dd>");
-document.writeln("			<dd><a href=\'/angel/dflz/ddjs/\'><img src=\'/images/left2.png\' alt=\'\'>党风廉政</a></dd>");
-document.writeln("			<dd><a href=\'/angel/yydz/\'><img src=\'/images/left3.png\' alt=\'\'>来院交通</a></dd>");
-document.writeln("			<dd><a href=\'/yltd/zjtime/\'><img src=\'/images/left4.png\' alt=\'\'>专家出诊表</a></dd>");
-document.writeln("		</dl>");
-document.writeln("	</div>");
-document.writeln("	<div class=\'xf2\'><a id=\'totop\'><img src=\'/images/left5.png\' alt=\'\'></a></div>");
-document.writeln("</div>");
+// document.writeln("<div id=\'xf\'>");
+// document.writeln("	<div class=\'xf1\'>");
+// document.writeln("		<dl>");
+// document.writeln("			<dd><a href=\'/angel/xfjs/\'><img src=\'/images/left1.png\' alt=\'\'>行风建设</a></dd>");
+// document.writeln("			<dd><a href=\'/angel/dflz/ddjs/\'><img src=\'/images/left2.png\' alt=\'\'>党风廉政</a></dd>");
+// document.writeln("			<dd><a href=\'/angel/yydz/\'><img src=\'/images/left3.png\' alt=\'\'>来院交通</a></dd>");
+// document.writeln("			<dd><a href=\'/yltd/zjtime/\'><img src=\'/images/left4.png\' alt=\'\'>专家出诊表</a></dd>");
+// document.writeln("		</dl>");
+// document.writeln("	</div>");
+// document.writeln("	<div class=\'xf2\'><a id=\'totop\'><img src=\'/images/left5.png\' alt=\'\'></a></div>");
+// document.writeln("</div>");
 
 
 /*反腐倡廉*/
-document.writeln('<div id="divpiao2" style="z-index: 99999999999; right: 0; visibility: visible; width: 341px; position: fixed; bottom: 0; height: 235px; "><div id="submenu"><div id="menuTitl" onclick="showsubmenu()"><img  src="/images/close.jpg" style="cursor: pointer;" width="50" height="20" border="0" vspace="3" alt="关闭广告"></div><a  href="/angel/mtbd/4535.html"  target="_blank"> <img  src="/images/corruption.jpg"  width="341" height="205" border="0" alt=""></a></div></div>');
-document.writeln("<script type=\'text/javascript\'>");
-document.writeln("");
-document.writeln("");
-document.writeln("function showsubmenu() {");
-document.writeln("");
-document.writeln("// eval(\'submenu\' +\'.style.display=\'none\';\');");
-document.writeln("$(\'#divpiao2\').hide();");
-document.writeln("}");
-
-document.writeln('$("#totop").click(function(){');
-document.writeln("		$('html, body').animate({ scrollTop: 0 }, 500);");
-document.writeln("})");
-
-document.writeln("</script>");
+// document.writeln('<div id="divpiao2" style="z-index: 99999999999; right: 0; visibility: visible; width: 341px; position: fixed; bottom: 0; height: 235px; "><div id="submenu"><div id="menuTitl" onclick="showsubmenu()"><img  src="/images/close.jpg" style="cursor: pointer;" width="50" height="20" border="0" vspace="3" alt="关闭广告"></div><a  href="/angel/mtbd/4535.html"  target="_blank"> <img  src="/images/corruption.jpg"  width="341" height="205" border="0" alt=""></a></div></div>');
+// document.writeln("<script type=\'text/javascript\'>");
+// document.writeln("");
+// document.writeln("");
+// document.writeln("function showsubmenu() {");
+// document.writeln("");
+// document.writeln("// eval(\'submenu\' +\'.style.display=\'none\';\');");
+// document.writeln("$(\'#divpiao2\').hide();");
+// document.writeln("}");
+//
+// document.writeln('$("#totop").click(function(){');
+// document.writeln("		$('html, body').animate({ scrollTop: 0 }, 500);");
+// document.writeln("})");
+//
+// document.writeln("</script>");
 
