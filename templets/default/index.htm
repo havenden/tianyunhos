@@ -39,19 +39,20 @@
         <div class="sy_con1_c">
             <div style="overflow: hidden;">
                 {dede:channelartlist typeid='10,12,11,16,17,34,14,13' topid='3' row='8'}
-                {dede:php}
-                $i = isset($i) ? $i+1 : 1;
-                $classArr = array(1=>'sy_con1_c1',2=>'sy_con1_c2',3=>'sy_con1_c4',4=>'sy_con1_c5',5=>'sy_con1_c5_2',6=>'sy_con1_c6',7=>'sy_con1_c7',8=>'sy_con1_c8');
-                $class = $classArr[$i];
-                echo '<div class="'.$class.'">';
-                {/dede:php}
-                <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">
-                    <h1>{dede:field name='typeenglishname'/}</h1>
-                    <span>{dede:field name='typename'/}</span>
-                    <p>{dede:field name='typedes'/}</p>
-                </a>
-            </div>
+                <div class="sy_con1_item">
+                    <a href="{dede:field name='typeurl'/}" title="{dede:field name='typename'/}">
+                        <h1>{dede:field name='typeenglishname'/}</h1>
+                        <span>{dede:field name='typename'/}</span>
+                        <p>{dede:field name='typedes'/}</p>
+                    </a>
+                </div>
                 {/dede:channelartlist}
+                <script>
+                    document.querySelectorAll('.sy_con1_item').forEach((el,index)=>{
+                        const classArr = ['sy_con1_c1','sy_con1_c2','sy_con1_c4','sy_con1_c5','sy_con1_c5_2','sy_con1_c6','sy_con1_c7','sy_con1_c8'];
+                        if(index < classArr.length) el.classList.add(classArr[index]);
+                    });
+                </script>
         <div class="sy_con1_c9"><a href="/" title="中医科"><h1>Traditional Chinese Medicine Department</h1><span>中医科</span></a></div>
 		<div class="sy_con1_c10"><a href="/" title="营养科"><h1>Nutriology Department</h1><span>营养科</span></a></div>
 		<div class="sy_con1_c11"><a href="/" title="心理咨询"><h1>Psychological Counseling Section</h1><span>心理咨询</span></a></div>
