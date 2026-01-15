@@ -89,7 +89,7 @@
                         <div class="TTSliderTitle">
                             <ul>
                                 {dede:channel typeid='5' type='son' row='10'}
-                                <li  class="{dede:if field:itemindex==1}cur{/dede:if}">
+                                <li  class="[field:itemindex function='(@me==1 ? "cur" : "")'/]">
                                     <div>
                                         <a href="[field:typeurl/]" title="[field:typename/]">[field:seotitle /]</a>
                                     </div>
@@ -112,7 +112,7 @@
                             <div class="TTSliderPicList">
 
                                 {dede:channelartlist typeid='5' row='10'}
-                                <ul class="{dede:if field:itemindex==1}show{/dede:if}">
+                                <ul class="[field:itemindex function='(@me==1 ? "show" : "")'/]">
                                     {dede:arclist channelid='1' row='20' addfields='zhiwei,zhicheng' orderby='pubdate'}
                                     <li>
                                         <div class="sy_con2_ct"></div>
