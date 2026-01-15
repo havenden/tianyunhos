@@ -111,31 +111,28 @@
                             </div>
                             <div class="TTSliderPicList">
 
-                                {dede:channel typeid='5' type='son'}
+                                {dede:channelartlist typeid='5' row='10'}
 
                                 <ul>
 
-                                    {dede:arclist typeid='[field:id/]' row='20' orderby='pubdate' limit='0,20'}
+                                    {dede:arclist row='20' orderby='pubdate'}
 
                                     <li>
-                                        <div class="sy_con2_cc">
-                                            <a href="[field:arcurl /]">
-                                                <img src="[field:litpic /]" />
-                                                <h1>[field:title /]</h1>
-                                                <p>[field:zhiwei /]</p>
-                                                <strong>[field:zhicheng /]</strong>
-                                            </a>
-                                        </div>
+                                        <a href="[field:arcurl /]">
+                                            <img src="[field:litpic /]">
+                                            <h1>[field:title /]</h1>
+                                            <p>[field:zhiwei /]</p>
+                                            <strong>[field:zhicheng /]</strong>
+                                        </a>
                                     </li>
 
                                     {/dede:arclist}
 
                                 </ul>
 
-                                {/dede:channel}
+                                {/dede:channelartlist}
 
                             </div>
-
 
                         </div>
                     </div>
