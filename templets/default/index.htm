@@ -115,12 +115,24 @@
                                 <ul class="{dede:if itemindex==1}show{/dede:if}">
                                     {dede:arclist channelid='1' row='20' addfields='zhiwei,zhicheng' orderby='pubdate'}
                                     <li>
-                                        <a href="[field:arcurl /]">
-                                            <img src="[field:litpic /]">
-                                            <h1>[field:title /]</h1>
-                                            <p>[field:zhiwei /]</p>
-                                            <strong>[field:zhicheng /]</strong>
-                                        </a>
+                                        <div class="sy_con2_ct"></div>
+                                        <div class="sy_con2_cl"></div>
+                                        <div class="sy_con2_cc">
+                                            <a href="[field:arcurl /]">
+                                            <div class="sy_con2_c2">
+                                                <img src="[field:litpic /]" alt="[field:title /]" />
+                                            </div>
+                                            <div class="sy_con2_c3">
+                                                <h1>[field:title /]</h1>
+                                                <p>[field:zhiwei /]</p>
+                                                <p>
+                                                    <strong>[field:zhicheng /]</strong>
+                                                </p>
+                                            </div>
+                                            </a>
+                                        </div>
+                                        <div class="sy_con2_cr"></div>
+                                        <div class="sy_con2_cb"></div>
                                     </li>
                                     {/dede:arclist}
                                 </ul>
