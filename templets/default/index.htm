@@ -88,7 +88,7 @@
                     <div class="TTSlider" id="TTSlider">
                         <div class="TTSliderTitle">
                             <ul>
-                                {dede:arclist typeid='5' row='10' titlelen='20'}
+                                {dede:arclist typeid='5' type='son' row='10' titlelen='20'}
                                 <li>
                                     <div>
                                         <a href="[field:arcurl /]" title="[field:typename /]">[field:seotitle /]</a>
@@ -110,11 +110,6 @@
                                 <a href='javascript:;'></a>
                             </div>
                             <div class='TTSliderPicList'>
-                                {dede:arclist typeid='5' row='100' orderby='id' titlelen='30'}
-                                {dede:field name='id' /}
-                                {dede:field name='typeid' /}
-                                {/dede:arclist}
-
                                 <!-- 调用子栏目文章 -->
                                 {dede:channel typeid='5'}
                                 {dede:arclist typeid='[field:typeid /]' row='100' orderby='pubdate' titlelen='30'}
