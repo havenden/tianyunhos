@@ -91,7 +91,7 @@
                                 {dede:arclist typeid='5' type='son' row='10' titlelen='20'}
                                 <li>
                                     <div>
-                                        <a href="[field:arcurl /]" title="[field:typename /]">[field:seotitle /]</a>
+                                        <a href="[field:arcurl /]" title="[field:typename /]">[field:typename/]</a>
                                     </div>
                                 </li>
                                 {/dede:arclist}
@@ -110,10 +110,9 @@
                                 <a href='javascript:;'></a>
                             </div>
                             <div class='TTSliderPicList'>
-                                <!-- 调用子栏目文章 -->
                                 {dede:channel typeid='5'}
-                                {dede:arclist typeid='[field:typeid /]' row='100' orderby='pubdate' titlelen='30'}
-                                <ul class='show'>
+                                <ul>
+                                    {dede:arclist typeid='[field:id/]' row='20' orderby='pubdate'}
                                     <li>
                                         <div class="sy_con2_ct"></div>
                                         <div class="sy_con2_cl"></div>
@@ -125,19 +124,20 @@
                                                 <div class="sy_con2_c3">
                                                     <h1>[field:title /]</h1>
                                                     <p>[field:writer /]</p>
-                                                    <p>
-                                                        <strong>[field:description /]</strong>
-                                                    </p>
+                                                    <p><strong>[field:description /]</strong></p>
                                                 </div>
                                             </a>
                                         </div>
                                         <div class="sy_con2_cr"></div>
                                         <div class="sy_con2_cb"></div>
                                     </li>
+                                    {/dede:arclist}
                                 </ul>
-                                {/dede:arclist}
+
                                 {/dede:channel}
+
                             </div>
+
                         </div>
                     </div>
                     <script type="text/javascript" src="/js/zjqh.js"></script>
