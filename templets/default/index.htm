@@ -109,40 +109,57 @@
                             <div href='javascript:;' id='TTSliderNextBtn' class='TTSliderNextBtn'>
                                 <a href='javascript:;'></a>
                             </div>
-                            <div class="TTSliderPicList">
-                                {dede:channelartlist typeid='5' row='3'}
-                                <div style="color:red;">测试：[field:typeid/] - [field:typename/] - [field:autoindex/]</div>
-                                {/dede:channelartlist}
+                            <ul class="TTSliderPicList">
 
-                                {dede:channelartlist typeid='5' row='10'}
-                                <ul class="[field:autoindex function='(@me==0 ? "show" : "")'/]">
-                                    {dede:arclist channelid='1' row='20' addfields='zhiwei,zhicheng' orderby='pubdate'}
+                                {dede:channel typeid='5' type='son'}
+                                <ul class="{dede:if global.autoindex==1}show{/dede:if}">
+
+                                    {dede:arclist typeid='[field:id/]' row='20' addfields='zhiwei,zhicheng'}
                                     <li>
-                                        <div class="sy_con2_ct"></div>
-                                        <div class="sy_con2_cl"></div>
-                                        <div class="sy_con2_cc">
-                                            <a href="[field:arcurl /]">
-                                            <div class="sy_con2_c2">
-                                                <img src="[field:litpic /]" alt="[field:title /]" />
-                                            </div>
-                                            <div class="sy_con2_c3">
-                                                <h1>[field:title /]</h1>
-                                                <p>[field:zhiwei /]</p>
-                                                <p>
-                                                    <strong>[field:zhicheng /]</strong>
-                                                </p>
-                                            </div>
-                                            </a>
-                                        </div>
-                                        <div class="sy_con2_cr"></div>
-                                        <div class="sy_con2_cb"></div>
+                                        <a href="[field:arcurl/]">
+                                            <img src="[field:litpic/]" alt="[field:title/]" />
+                                            <h1>[field:title/]</h1>
+                                            <p>[field:zhiwei/]</p>
+                                            <strong>[field:zhicheng/]</strong>
+                                        </a>
                                     </li>
                                     {/dede:arclist}
+
                                 </ul>
+                                {/dede:channel}
 
-                                {/dede:channelartlist}
+                            </ul>
 
-                            </div>
+                            <!--                            <div class="TTSliderPicList">-->
+<!--                                {dede:channelartlist typeid='5' row='10'}-->
+<!--                                <ul class="[field:autoindex function='(@me==0 ? "show" : "")'/]">-->
+<!--                                    {dede:arclist channelid='1' row='20' addfields='zhiwei,zhicheng' orderby='pubdate'}-->
+<!--                                    <li>-->
+<!--                                        <div class="sy_con2_ct"></div>-->
+<!--                                        <div class="sy_con2_cl"></div>-->
+<!--                                        <div class="sy_con2_cc">-->
+<!--                                            <a href="[field:arcurl /]">-->
+<!--                                            <div class="sy_con2_c2">-->
+<!--                                                <img src="[field:litpic /]" alt="[field:title /]" />-->
+<!--                                            </div>-->
+<!--                                            <div class="sy_con2_c3">-->
+<!--                                                <h1>[field:title /]</h1>-->
+<!--                                                <p>[field:zhiwei /]</p>-->
+<!--                                                <p>-->
+<!--                                                    <strong>[field:zhicheng /]</strong>-->
+<!--                                                </p>-->
+<!--                                            </div>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                        <div class="sy_con2_cr"></div>-->
+<!--                                        <div class="sy_con2_cb"></div>-->
+<!--                                    </li>-->
+<!--                                    {/dede:arclist}-->
+<!--                                </ul>-->
+
+<!--                                {/dede:channelartlist}-->
+
+<!--                            </div>-->
 
                         </div>
                     </div>
