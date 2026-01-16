@@ -186,18 +186,18 @@
                     </div>
                 </div>
                 <div class="clas_02 fr bank">
-                    {dede:channel typeid='6' type='son'}
-                    <div class="tit">· [field:typename/]<span><a href="[field:typeurl/]">more>></a></span></div>
+                    {dede:type typeid='24'}
+                    <div class="tit">· [field:typename/]<span><a href="[field:typelink/]">more>></a></span></div>
+                    {/dede:type}
                     <div class="bod">
                         <ul>
-                            {dede:arclist typeid='6' row='10' orderby='pubdate'}
+                            {dede:arclist typeid='24' type='son' row='7' orderby='pubdate'}
                             <li>
                                 <a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a>
                             </li>
                             {/dede:arclist}
                         </ul>
                     </div>
-                    {/dede:channel}
                 </div>
                 <div class="clas_03 fl bank">
                     <div class="tit">· 学术会议<span>
