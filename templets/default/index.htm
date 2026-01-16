@@ -89,7 +89,7 @@
                         <div class="TTSliderTitle">
                             <ul>
                                 {dede:channel typeid='5' type='son' row='10'}
-                                <li  class="[field:global.autoindex function='(@me==0 ? "cur" : "")'/]">
+                                <li class="">
                                     <div>
                                         <a href="[field:typeurl/]" title="[field:typename/]">[field:seotitle /]</a>
                                     </div>
@@ -97,7 +97,6 @@
                                 {/dede:channel}
                             </ul>
                         </div>
-
                         <div class="sy_con2_c1">
                             天孕拥有一支技术精湛的医师团队，其中享受国务院特殊津贴专家1位、教授以及副教授专家7位、主任/副主任医师20余位。
                         </div>
@@ -110,59 +109,52 @@
                                 <a href='javascript:;'></a>
                             </div>
                             <div class="TTSliderPicList">
-
-                                {dede:channel typeid='5' type='son'}
-                                <ul class="{dede:if global.autoindex==1}show{/dede:if}">
-
-                                    {dede:arclist typeid='[field:id/]' row='20' addfields='zhiwei,zhicheng'}
+                                {dede:channelartlist typeid='5' row='10'}
+                                <ul class="">
+                                    {dede:arclist channelid='1' row='20' addfields='zhiwei,zhicheng' orderby='pubdate'}
                                     <li>
-                                        <a href="[field:arcurl/]">
-                                            <img src="[field:litpic/]" alt="[field:title/]" />
-                                            <h1>[field:title/]</h1>
-                                            <p>[field:zhiwei/]</p>
-                                            <strong>[field:zhicheng/]</strong>
-                                        </a>
+                                        <div class="sy_con2_ct"></div>
+                                        <div class="sy_con2_cl"></div>
+                                        <div class="sy_con2_cc">
+                                            <a href="[field:arcurl /]">
+                                            <div class="sy_con2_c2">
+                                                <img src="[field:litpic /]" alt="[field:title /]" />
+                                            </div>
+                                            <div class="sy_con2_c3">
+                                                <h1>[field:title /]</h1>
+                                                <p>[field:zhiwei /]</p>
+                                                <p>
+                                                    <strong>[field:zhicheng /]</strong>
+                                                </p>
+                                            </div>
+                                            </a>
+                                        </div>
+                                        <div class="sy_con2_cr"></div>
+                                        <div class="sy_con2_cb"></div>
                                     </li>
                                     {/dede:arclist}
-
                                 </ul>
-                                {/dede:channel}
-
+                                {/dede:channelartlist}
                             </div>
-
-                            <!--                            <div class="TTSliderPicList">-->
-<!--                                {dede:channelartlist typeid='5' row='10'}-->
-<!--                                <ul class="[field:autoindex function='(@me==0 ? "show" : "")'/]">-->
-<!--                                    {dede:arclist channelid='1' row='20' addfields='zhiwei,zhicheng' orderby='pubdate'}-->
-<!--                                    <li>-->
-<!--                                        <div class="sy_con2_ct"></div>-->
-<!--                                        <div class="sy_con2_cl"></div>-->
-<!--                                        <div class="sy_con2_cc">-->
-<!--                                            <a href="[field:arcurl /]">-->
-<!--                                            <div class="sy_con2_c2">-->
-<!--                                                <img src="[field:litpic /]" alt="[field:title /]" />-->
-<!--                                            </div>-->
-<!--                                            <div class="sy_con2_c3">-->
-<!--                                                <h1>[field:title /]</h1>-->
-<!--                                                <p>[field:zhiwei /]</p>-->
-<!--                                                <p>-->
-<!--                                                    <strong>[field:zhicheng /]</strong>-->
-<!--                                                </p>-->
-<!--                                            </div>-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                        <div class="sy_con2_cr"></div>-->
-<!--                                        <div class="sy_con2_cb"></div>-->
-<!--                                    </li>-->
-<!--                                    {/dede:arclist}-->
-<!--                                </ul>-->
-
-<!--                                {/dede:channelartlist}-->
-
-<!--                            </div>-->
-
                         </div>
                     </div>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            var box = document.querySelector(".TTSliderTitle");
+                            if (!box) return;
+                            var lis = box.querySelectorAll("li");
+                            if (lis.length > 0) {
+                                lis[0].classList.add("cur");
+                            }
+                            var box1 = document.querySelector(".TTSliderPicList");
+                            if (!box1) return;
+                            var uls1 = box1.querySelectorAll("ul");
+                            if (uls1.length > 0) {
+                                uls1[0].classList.add("show");
+                            }
+                        });
+                    </script>
+
                     <script type="text/javascript" src="/js/zjqh.js"></script>
                 </div>
             </div>
